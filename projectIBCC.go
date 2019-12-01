@@ -9,7 +9,7 @@ import (
 	"net"
 	"sync"
 
-	chain "github.com/aneesulanwar/assignment02IBC"
+	chain "github.com/aneesulanwar/projectIBC"
 )
 
 type Node struct {
