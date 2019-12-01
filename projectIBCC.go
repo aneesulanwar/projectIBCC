@@ -123,7 +123,7 @@ func Validate(transaction chain.Transaction, thisNode CAddress, chainHead **chai
 		if decision == 0 {
 			validTransaction = true
 		} else {
-			validTransaction = true
+			validTransaction = false
 		}
 
 		fmt.Println("Decision is ", validTransaction)
