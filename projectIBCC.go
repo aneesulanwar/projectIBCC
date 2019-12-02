@@ -36,6 +36,7 @@ type NetworkTrans struct {
 
 var Nodes []CAddress
 var Leader CAddress
+var Client CAddress
 var Fupdate bool
 
 func HandleConnection(con net.Conn, thisNode CAddress, chainHead **chain.Block, leader CAddress) {
@@ -98,26 +99,6 @@ func Validate(transaction chain.Transaction, thisNode CAddress, chainHead **chai
 	}
 
 	if amount < transaction.Bcoins {
-		/*fmt.Println("Invalid Transaction")
-
-		fmt.Println("Do you want to add it, yes/no")
-
-		var valid string
-		fmt.Scan(&valid)
-		for valid != "yes" && valid != "no" {
-			fmt.Println("Do you want to add it, yes/no")
-			fmt.Scan(&valid)
-		}
-		fmt.Println("input is : ", valid)
-		if valid == "yes" {
-			fmt.Println("enter into yes block")
-			validTransaction = true
-		} else if valid == "no" {
-			fmt.Println("enter into No block")
-			validTransaction = false
-		}
-		*/
-
 		fmt.Println("Invalid Transaction")
 		decision := rand.Intn(4)
 		if decision == 0 {
